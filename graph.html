@@ -37,7 +37,6 @@
     <select onchange="if (this.value) window.location.href=this.value">
         <option value="index.html">Portada &rarr; index.html</option>
         <option value="graph.html" selected>Gráfico &rarr; graph.html</option>
-        <option value="graph2.html" selected>Gráfico barras &rarr; graph2.html</option>
         <option value="mapa.html">Mundial &rarr; mapa.html</option>
     </select>
 
@@ -99,12 +98,12 @@
             }
 
             new Chart(document.getElementById('chart').getContext('2d'), {
-                type: 'line',
+                type: 'bar',
                 data: {
                     labels: marzo,
                     datasets: [{
                         label: 'Mexico',
-                        backgroundColor: 'rgba(222,203,228,.1)',
+                        backgroundColor: 'rgba(222,203,228)',
                         borderColor: 'rgb(222,203,228)',
                         borderWidth: 2,
                         pointRadius: 2,
@@ -112,7 +111,7 @@
                         data: marzo_mexico
                     }, {
                         label: 'Eslovenia',
-                        backgroundColor: 'rgba(254,217,166,.1)',
+                        backgroundColor: 'rgba(254,217,166)',
                         borderColor: 'rgb(254,217,166)',
                         borderWidth: 2,
                         pointRadius: 2,
@@ -120,7 +119,7 @@
                         data: marzo_eslovenia
                     }, {
                         label: 'Francia',
-                        backgroundColor: 'rgba(251,180,174,.1)',
+                        backgroundColor: 'rgba(251,180,174)',
                         borderColor: 'rgb(251,180,174)',
                         borderWidth: 2,
                         pointRadius: 2,
@@ -128,7 +127,7 @@
                         data: marzo_francia
                     }, {
                         label: 'Brasil',
-                        backgroundColor: 'rgba(204,235,197,.1)',
+                        backgroundColor: 'rgba(204,235,197)',
                         borderColor: 'rgb(204,235,197)',
                         borderWidth: 2,
                         pointRadius: 2,
@@ -136,7 +135,7 @@
                         data: marzo_brasil
                     }, {
                         label: 'Suiza',
-                        backgroundColor: 'rgba(179,205,227,.1)',
+                        backgroundColor: 'rgba(179,205,227)',
                         borderColor: 'rgb(179,205,227)',
                         borderWidth: 2,
                         pointRadius: 2,
