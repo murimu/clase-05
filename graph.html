@@ -42,16 +42,16 @@
 
     <script>
         var url = "https://pomber.github.io/covid19/timeseries.json";
-        var casos, italia, austria, eslovenia, francia, suiza;
+        var recuperados, brasil, mexico, eslovenia, francia, suiza;
         var marzo = [];
-        var marzo_italia = [];
-        var marzo_austria = [];
+        var marzo_brasil = [];
+        var marzo_mexico = [];
         var marzo_eslovenia = [];
         var marzo_francia = [];
         var marzo_suiza = [];
 
         function preload() {
-            casos = loadJSON(url);
+            recuperados = loadJSON(url);
         }
 
         function setup() {
@@ -61,21 +61,21 @@
                 marzo.push(x);
             }
 
-            italia = casos.Italy;
-            austria = casos.Austria;
-            eslovenia = casos.Slovenia;
-            francia = casos.France;
-            suiza = casos.Switzerland;
+            brasil = recuperados.Brazil;
+            mexico = recuperados.Mexico;
+            eslovenia = recuperados.Slovenia;
+            francia = recuperados.France;
+            suiza = recuperados.Switzerland;
 
-            for (let x = 0; x < italia.length; x++) {
-                if (italia[x].date.includes("-3-")) {
-                    marzo_italia.push(italia[x].confirmed);
+            for (let x = 0; x < brasil.length; x++) {
+                if (brasil[x].date.includes("-3-")) {
+                    marzo_brasil.push(brasil[x].confirmed);
                 }
             }
 
-            for (let x = 0; x < austria.length; x++) {
-                if (austria[x].date.includes("-3-")) {
-                    marzo_austria.push(austria[x].confirmed);
+            for (let x = 0; x < mexico.length; x++) {
+                if (mexico[x].date.includes("-3-")) {
+                    marzo_mexico.push(mexico[x].confirmed);
                 }
             }
 
@@ -102,13 +102,13 @@
                 data: {
                     labels: marzo,
                     datasets: [{
-                        label: 'Austria',
+                        label: 'Mexico',
                         backgroundColor: 'rgba(152,78,163,.1)',
                         borderColor: 'rgb(152,78,163)',
                         borderWidth: 2,
                         pointRadius: 2,
                         lineTension: 0,
-                        data: marzo_austria
+                        data: marzo_mexico
                     }, {
                         label: 'Eslovenia',
                         backgroundColor: 'rgba(77,175,74,.1)',
@@ -126,13 +126,13 @@
                         lineTension: 0,
                         data: marzo_francia
                     }, {
-                        label: 'Italia',
+                        label: 'Brasil',
                         backgroundColor: 'rgba(228,26,28,.1)',
                         borderColor: 'rgb(228,26,28)',
                         borderWidth: 2,
                         pointRadius: 2,
                         lineTension: 0,
-                        data: marzo_italia
+                        data: marzo_brasil
                     }, {
                         label: 'Suiza',
                         backgroundColor: 'rgba(255,127,0,.1)',
