@@ -52,19 +52,20 @@
 
 </style>
   <div class="center">
-<p>BRASIL</p>
+<p>PARAGUAY</p>
 </div>
 
     <select onchange="if (this.value) window.location.href=this.value">
-        <option value="index.html">Portada &rarr; index.html</option>
-        <option value="graph.html" selected>Gráfico &rarr; graph.html</option>
+        <option value="index.html" selected>Portada &rarr; index.html</option>
+        <option value="graph.html">Gráfico &rarr; graph.html</option>
+          <option value="graph2.html">Gráfico barras &rarr; graph2.html</option>
         <option value="mapa.html">Mundial &rarr; mapa.html</option>
     </select>
 
     <script>
         var url = "https://pomber.github.io/covid19/timeseries.json";
 
-        var casos, brazil, confirmados, muertos, recuperados;
+        var casos, paraguay, confirmados, muertos, recuperados;
 
         function preload() {
             casos = loadJSON(url);
@@ -72,11 +73,11 @@
 
         function setup() {
             createCanvas(windowWidth, windowHeight).position(0, 0).style('z-index', -1);
-            brazil = casos.Brazil;
-            console.log(brazil);
-            confirmados = brazil[brazil.length - 1].confirmed;
-            muertos = brazil[brazil.length - 1].deaths;
-            recuperados = brazil[brazil.length - 1].recovered;
+            paraguay = casos.Paraguay;
+            console.log(paraguay);
+            confirmados = paraguay[paraguay.length - 1].confirmed;
+            muertos = paraguay[paraguay.length - 1].deaths;
+            recuperados = paraguay[paraguay.length - 1].recovered;
             console.log(confirmados);
             console.log(muertos);
             console.log(recuperados);
